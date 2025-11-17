@@ -13,11 +13,11 @@
 </head>
 <body class="bg-light">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-code-slash me-2"></i>
-                Портфолио
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-code-slash"></i>
+                DevPortfolio
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -50,16 +50,16 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section bg-primary text-white py-5">
+    <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-3">Привет! Я <span class="text-warning">Рамазанов Мухамед</span></h1>
-                    <p class="lead mb-4">
+                <div class="col-lg-6 hero-content fade-in-up">
+                    <h1 class="hero-title">Привет! Я <span class="text-warning">Мухамед</span></h1>
+                    <p class="hero-subtitle">
                         Студент группы ЭФБО-16-24<br>
-                        Увлекаюсь веб-разработкой и современными технологиями
+                        Увлекаюсь веб-разработкой и созданием современных интерфейсов
                     </p>
-                    <div class="d-flex gap-3 flex-wrap">
+                    <div class="d-flex flex-wrap gap-3">
                         <a href="assets/resume.pdf" class="btn btn-warning btn-lg" download>
                             <i class="bi bi-download me-2"></i>Скачать резюме
                         </a>
@@ -69,65 +69,232 @@
                     </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="images/photo.jpg" alt="Фото студента" 
-                         class="img-fluid rounded-circle shadow-lg" 
-                         style="width: 300px; height: 300px; object-fit: cover;">
+                    <!-- Адаптивное изображение с Picture element -->
+                    <picture>
+                        
+                        <!-- JPEG для старых браузеров -->
+                        <source srcset="images/photo.jpg" type="image/jpeg">
+                        <!-- Фолбэк -->
+                        <img src="images/photo.jpg" 
+                             alt="Фото студента" 
+                             class="hero-photo responsive-image fade-in-up"
+                             loading="lazy"
+                             width="280"
+                             height="280">
+                    </picture>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="skills-section py-5">
+    <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">
+            <h2 class="text-center mb-5 section-title">
                 <i class="bi bi-tools text-primary me-2"></i>
                 Мои навыки
             </h2>
             
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <!-- HTML/CSS -->
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span class="fw-semibold">HTML/CSS</span>
-                            <span class="text-primary">90%</span>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h5 class="fw-bold">HTML/CSS</h5>
+                        <span class="text-primary fw-bold">90%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" style="width: 90%"></div>
+                    </div>
+                    <small class="text-muted mt-2 d-block">
+                        <i class="bi bi-check-circle text-success me-1"></i>
+                        Адаптивная верстка, Flexbox, Grid, CSS переменные
+                    </small>
+                </div>
+
+                <div class="skill-card">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h5 class="fw-bold">JavaScript</h5>
+                        <span class="text-primary fw-bold">80%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" style="width: 80%"></div>
+                    </div>
+                    <small class="text-muted mt-2 d-block">
+                        <i class="bi bi-check-circle text-success me-1"></i>
+                        ES6+, DOM манипуляции, события, асинхронность
+                    </small>
+                </div>
+
+                <div class="skill-card">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h5 class="fw-bold">Bootstrap</h5>
+                        <span class="text-primary fw-bold">85%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" style="width: 85%"></div>
+                    </div>
+                    <small class="text-muted mt-2 d-block">
+                        <i class="bi bi-check-circle text-success me-1"></i>
+                        Bootstrap 5, кастомизация, компоненты, утилиты
+                    </small>
+                </div>
+
+                <div class="skill-card">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h5 class="fw-bold">React</h5>
+                        <span class="text-primary fw-bold">60%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" style="width: 60%"></div>
+                    </div>
+                    <small class="text-muted mt-2 d-block">
+                        <i class="bi bi-clock text-warning me-1"></i>
+                        Компоненты, хуки, состояние, изучаю сейчас
+                    </small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adaptive Images Demo Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">
+                <i class="bi bi-image text-primary me-2"></i>
+                Адаптивные изображения в действии
+            </h2>
+            
+            <div class="row g-4">
+                <!-- Техника 1: Базовое адаптивное изображение -->
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="bi bi-phone me-2"></i>
+                                Базовое адаптивное изображение
+                            </h5>
                         </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%"></div>
+                        <div class="card-body">
+                            <img src="images/landscape.jpg" 
+                                 alt="Красивый пейзаж" 
+                                 class="responsive-image"
+                                 loading="lazy">
+                            <div class="mt-3">
+                                <h6>Что происходит:</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check text-success me-2"></i>Ширина: 100% контейнера</li>
+                                    <li><i class="bi bi-check text-success me-2"></i>Высота: автоматическая</li>
+                                    <li><i class="bi bi-check text-success me-2"></i>Пропорции: сохраняются</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- JavaScript -->
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span class="fw-semibold">JavaScript</span>
-                            <span class="text-primary">80%</span>
+                <!-- Техника 2: Picture element -->
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="bi bi-card-image me-2"></i>
+                                Picture element + WebP
+                            </h5>
                         </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%"></div>
+                        <div class="card-body">
+                            <picture>
+                                <source srcset="images/portrait.webp" type="image/webp">
+                                <source srcset="images/portrait.jpg" type="image/jpeg">
+                                <img src="images/portrait.jpg" 
+                                     alt="Портрет" 
+                                     class="responsive-image"
+                                     loading="lazy">
+                            </picture>
+                            <div class="mt-3">
+                                <h6>Что происходит:</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check text-success me-2"></i>WebP для современных браузеров</li>
+                                    <li><i class="bi bi-check text-success me-2"></i>JPEG фолбэк для старых</li>
+                                    <li><i class="bi bi-check text-success me-2"></i>Автоматический выбор формата</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Bootstrap -->
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span class="fw-semibold">Bootstrap</span>
-                            <span class="text-primary">85%</span>
+                <!-- Техника 3: Разные изображения для разных экранов -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="bi bi-laptop me-2"></i>
+                                Разные изображения для разных устройств
+                            </h5>
                         </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        <div class="card-body">
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="images/wide-desktop.jpg">
+                                <source media="(min-width: 768px)" srcset="images/tablet.jpg">
+                                <img src="images/mobile.jpg" 
+                                     alt="Адаптивное изображение" 
+                                     class="responsive-image"
+                                     loading="lazy">
+                            </picture>
+                            <div class="row mt-3 text-center">
+                                <div class="col-md-4">
+                                    <i class="bi bi-pc display-6 text-primary"></i>
+                                    <h6>Десктоп</h6>
+                                    <small class="text-muted">1200px+</small>
+                                </div>
+                                <div class="col-md-4">
+                                    <i class="bi bi-tablet display-6 text-success"></i>
+                                    <h6>Планшет</h6>
+                                    <small class="text-muted">768px-1199px</small>
+                                </div>
+                                <div class="col-md-4">
+                                    <i class="bi bi-phone display-6 text-warning"></i>
+                                    <h6>Мобильный</h6>
+                                    <small class="text-muted">до 767px</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- React -->
-                    <div class="skill-item mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span class="fw-semibold">React</span>
-                            <span class="text-primary">60%</span>
+                <!-- Техника 4: Object-fit демонстрация -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="card-title mb-0">
+                                <i class="bi bi-aspect-ratio me-2"></i>
+                                Object-fit свойства
+                            </h5>
                         </div>
-                        <div class="progress" style="height: 10px;">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 60%"></div>
+                        <div class="card-body">
+                            <div class="object-fit-demo">
+                                <div class="object-fit-item">
+                                    <img src="images/square.jpg" 
+                                         class="object-fit-cover" 
+                                         alt="Cover пример"
+                                         loading="lazy">
+                                    <span class="fw-bold">object-fit: cover</span>
+                                    <small class="text-muted d-block">Заполняет с обрезкой</small>
+                                </div>
+                                <div class="object-fit-item">
+                                    <img src="images/square.jpg" 
+                                         class="object-fit-contain" 
+                                         alt="Contain пример"
+                                         loading="lazy">
+                                    <span class="fw-bold">object-fit: contain</span>
+                                    <small class="text-muted d-block">Вписывает полностью</small>
+                                </div>
+                                <div class="object-fit-item">
+                                    <img src="images/square.jpg" 
+                                         class="object-fit-fill" 
+                                         alt="Fill пример"
+                                         loading="lazy">
+                                    <span class="fw-bold">object-fit: fill</span>
+                                    <small class="text-muted d-block">Растягивает, искажая</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -136,77 +303,96 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="projects-section bg-light py-5">
+    <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">
+            <h2 class="text-center mb-5 section-title">
                 <i class="bi bi-star-fill text-warning me-2"></i>
                 Лучшие проекты
             </h2>
             
-            <div class="row g-4">
+            <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm project-card">
-                        <img src="images/projects/project1.jpg" class="card-img-top" alt="Личный сайт" style="height: 200px; object-fit: cover;">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Личный сайт</h5>
-                            <p class="card-text flex-grow-1">
-                                Сайт-портфолио на HTML, CSS и Bootstrap с адаптивным дизайном.
-                            </p>
-                            <div class="mt-auto">
-                                <div class="mb-3">
-                                    <span class="badge bg-primary">HTML</span>
-                                    <span class="badge bg-primary">CSS</span>
-                                    <span class="badge bg-primary">Bootstrap</span>
-                                </div>
-                                <a href="pages/projects.html" class="btn btn-outline-primary btn-sm">Подробнее</a>
-                            </div>
+                <div class="project-card">
+                    <div class="position-relative">
+                        <!-- Адаптивное изображение проекта -->
+                        <picture>
+                            <source srcset="images/projects/project1.webp" type="image/webp">
+                            <source srcset="images/projects/project1.jpg" type="image/jpeg">
+                            <img src="images/projects/project1.jpg" 
+                                 class="project-card-img responsive-image" 
+                                 alt="Личный сайт"
+                                 loading="lazy">
+                        </picture>
+                        <span class="position-absolute top-0 end-0 badge bg-success m-3">Завершен</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Личный сайт-портфолио</h5>
+                        <p class="card-text text-muted">
+                            Адаптивный сайт-портфолио с использованием современных веб-технологий и анимациями.
+                        </p>
+                        <div class="mb-3">
+                            <span class="badge bg-primary me-1">HTML</span>
+                            <span class="badge bg-primary me-1">CSS</span>
+                            <span class="badge bg-primary">Bootstrap</span>
                         </div>
+                        <a href="pages/projects.html" class="btn btn-outline-primary">Подробнее</a>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm project-card">
-                        <img src="images/projects/project2.jpg" class="card-img-top" alt="Todo приложение" style="height: 200px; object-fit: cover;">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Todo приложение</h5>
-                            <p class="card-text flex-grow-1">
-                                Приложение для управления задачами с использованием JavaScript.
-                            </p>
-                            <div class="mt-auto">
-                                <div class="mb-3">
-                                    <span class="badge bg-success">JavaScript</span>
-                                    <span class="badge bg-success">LocalStorage</span>
-                                </div>
-                                <a href="pages/projects.html" class="btn btn-outline-primary btn-sm">Подробнее</a>
-                            </div>
+                <div class="project-card">
+                    <div class="position-relative">
+                        <picture>
+                            <source srcset="images/projects/project2.webp" type="image/webp">
+                            <source srcset="images/projects/project2.jpg" type="image/jpeg">
+                            <img src="images/projects/project2.jpg" 
+                                 class="project-card-img responsive-image" 
+                                 alt="Todo приложение"
+                                 loading="lazy">
+                        </picture>
+                        <span class="position-absolute top-0 end-0 badge bg-success m-3">Завершен</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Todo приложение</h5>
+                        <p class="card-text text-muted">
+                            Приложение для управления задачами с локальным хранилищем и красивым UI.
+                        </p>
+                        <div class="mb-3">
+                            <span class="badge bg-success me-1">JavaScript</span>
+                            <span class="badge bg-success">LocalStorage</span>
                         </div>
+                        <a href="pages/projects.html" class="btn btn-outline-primary">Подробнее</a>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm project-card">
-                        <img src="images/projects/project3.jpg" class="card-img-top" alt="Интернет-магазин" style="height: 200px; object-fit: cover;">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Интернет-магазин</h5>
-                            <p class="card-text flex-grow-1">
-                                Прототип интернет-магазина с корзиной товаров и фильтрацией.
-                            </p>
-                            <div class="mt-auto">
-                                <div class="mb-3">
-                                    <span class="badge bg-info">React</span>
-                                    <span class="badge bg-info">API</span>
-                                </div>
-                                <a href="pages/projects.html" class="btn btn-outline-primary btn-sm">Подробнее</a>
-                            </div>
+                <div class="project-card">
+                    <div class="position-relative">
+                        <picture>
+                            <source srcset="images/projects/project3.webp" type="image/webp">
+                            <source srcset="images/projects/project3.jpg" type="image/jpeg">
+                            <img src="images/projects/project3.jpg" 
+                                 class="project-card-img responsive-image" 
+                                 alt="Интернет-магазин"
+                                 loading="lazy">
+                        </picture>
+                        <span class="position-absolute top-0 end-0 badge bg-warning m-3">В процессе</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Интернет-магазин</h5>
+                        <p class="card-text text-muted">
+                            Прототип интернет-магазина с корзиной товаров и системой фильтрации.
+                        </p>
+                        <div class="mb-3">
+                            <span class="badge bg-info me-1">React</span>
+                            <span class="badge bg-info">API</span>
                         </div>
+                        <a href="pages/projects.html" class="btn btn-outline-primary">Подробнее</a>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center mt-4">
+            <div class="text-center mt-5">
                 <a href="pages/projects.html" class="btn btn-primary btn-lg">
                     <i class="bi bi-arrow-right me-2"></i>Все проекты
                 </a>
@@ -215,7 +401,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="footer">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
