@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный дневник - Портфолио студента</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="bi bi-code-slash me-2"></i>
+                Портфолио
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="bi bi-house me-1"></i>Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-folder me-1"></i>Проекты
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="diary.html">
+                            <i class="bi bi-journal me-1"></i>Дневник
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">
+                            <i class="bi bi-telephone me-1"></i>Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-primary text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h1 class="h2 mb-2">
+                        <i class="bi bi-journal-text me-2"></i>Учебный дневник
+                    </h1>
+                    <p class="mb-0 opacity-75">Отслеживание образовательного прогресса</p>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addEntryModal">
+                        <i class="bi bi-plus-circle me-1"></i>Добавить запись
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="diary-main py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Progress Timeline -->
+                <div class="col-lg-8 mb-5">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-graph-up text-primary me-2"></i>
+                                Хронология прогресса
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="timeline" id="progressTimeline">
+                                <!-- Entry 1 -->
+                                <div class="timeline-item completed">
+                                    <div class="timeline-marker bg-success">
+                                        <i class="bi bi-check-lg"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <h6 class="mb-1">Верстка макета сайта</h6>
+                                            <span class="badge bg-success">Завершено</span>
+                                        </div>
+                                        <p class="text-muted mb-1">Создание адаптивного макета с использованием Bootstrap</p>
+                                        <small class="text-muted">
+                                            <i class="bi bi-calendar me-1"></i>15 декабря 2024
+                                        </small>
+                                        <div class="mt-2">
+                                            <span class="badge bg-primary">HTML/CSS</span>
+                                            <span class="badge bg-primary">Bootstrap</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Entry 2 -->
+                                <div class="timeline-item completed">
+                                    <div class="timeline-marker bg-success">
+                                        <i class="bi bi-check-lg"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <h6 class="mb-1">JavaScript основы</h6>
+                                            <span class="badge bg-success">Завершено</span>
+                                        </div>
+                                        <p class="text-muted mb-1">Изучение основ JavaScript: переменные, функции, DOM</p>
+                                        <small class="text-muted">
+                                            <i class="bi bi-calendar me-1"></i>10 декабря 2024
+                                        </small>
+                                        <div class="mt-2">
+                                            <span class="badge bg-success">JavaScript</span>
+                                            <span class="badge bg-success">DOM API</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Entry 3 -->
+                                <div class="timeline-item in-progress">
+                                    <div class="timeline-marker bg-warning">
+                                        <i class="bi bi-arrow-repeat"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <h6 class="mb-1">Работа с формами</h6>
+                                            <span class="badge bg-warning">В процессе</span>
+                                        </div>
+                                        <p class="text-muted mb-1">Валидация форм, обработка событий, AJAX запросы</p>
+                                        <small class="text-muted">
+                                            <i class="bi bi-calendar me-1"></i>5 декабря 2024
+                                        </small>
+                                        <div class="mt-2">
+                                            <span class="badge bg-success">JavaScript</span>
+                                            <span class="badge bg-info">Forms</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Entry 4 -->
+                                <div class="timeline-item in-progress">
+                                    <div class="timeline-marker bg-warning">
+                                        <i class="bi bi-arrow-repeat"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <h6 class="mb-1">Адаптивный дизайн</h6>
+                                            <span class="badge bg-warning">В процессе</span>
+                                        </div>
+                                        <p class="text-muted mb-1">Media queries, flexbox, grid layout</p>
+                                        <small class="text-muted">
+                                            <i class="bi bi-calendar me-1"></i>1 декабря 2024
+                                        </small>
+                                        <div class="mt-2">
+                                            <span class="badge bg-primary">CSS3</span>
+                                            <span class="badge bg-primary">Responsive</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Entry 5 -->
+                                <div class="timeline-item planned">
+                                    <div class="timeline-marker bg-secondary">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <h6 class="mb-1">React основы</h6>
+                                            <span class="badge bg-secondary">Запланировано</span>
+                                        </div>
+                                        <p class="text-muted mb-1">Компоненты, состояние, жизненный цикл</p>
+                                        <small class="text-muted">
+                                            <i class="bi bi-calendar me-1"></i>20 декабря 2024
+                                        </small>
+                                        <div class="mt-2">
+                                            <span class="badge bg-info">React</span>
+                                            <span class="badge bg-info">Components</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Courses -->
+                <div class="col-lg-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-light">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-book text-primary me-2"></i>
+                                Текущие курсы
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- Course 1 -->
+                            <div class="course-item mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0">Веб-разработка</h6>
+                                    <span class="text-primary fw-bold">90%</span>
+                                </div>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-success" style="width: 90%"></div>
+                                </div>
+                                <small class="text-muted">HTML, CSS, JavaScript, Bootstrap</small>
+                            </div>
+
+                            <!-- Course 2 -->
+                            <div class="course-item mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0">JavaScript</h6>
+                                    <span class="text-primary fw-bold">70%</span>
+                                </div>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-info" style="width: 70%"></div>
+                                </div>
+                                <small class="text-muted">ES6+, DOM, Events, API</small>
+                            </div>
+
+                            <!-- Course 3 -->
+                            <div class="course-item mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0">React</h6>
+                                    <span class="text-primary fw-bold">50%</span>
+                                </div>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-warning" style="width: 50%"></div>
+                                </div>
+                                <small class="text-muted">Components, Hooks, State</small>
+                            </div>
+
+                            <!-- Course 4 -->
+                            <div class="course-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="mb-0">Базы данных</h6>
+                                    <span class="text-primary fw-bold">30%</span>
+                                </div>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-danger" style="width: 30%"></div>
+                                </div>
+                                <small class="text-muted">SQL, MongoDB, ORM</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                            <h3 class="card-title h5 mb-0">
+                                <i class="bi bi-bar-chart text-primary me-2"></i>
+                                Статистика
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-6 mb-3">
+                                    <div class="stat-item">
+                                        <div class="h4 text-primary mb-1" id="completedCount">2</div>
+                                        <small class="text-muted">Завершено</small>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="stat-item">
+                                        <div class="h4 text-warning mb-1" id="inProgressCount">2</div>
+                                        <small class="text-muted">В процессе</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="stat-item">
+                                        <div class="h4 text-info mb-1" id="totalHours">48</div>
+                                        <small class="text-muted">Часов обучения</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="stat-item">
+                                        <div class="h4 text-success mb-1" id="skillsCount">12</div>
+                                        <small class="text-muted">Навыков освоено</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Entry Modal -->
+    <div class="modal fade" id="addEntryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Добавить учебную запись</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addEntryForm">
+                        <div class="mb-3">
+                            <label for="entryTitle" class="form-label">Название темы</label>
+                            <input type="text" class="form-control" id="entryTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="entryDescription" class="form-label">Описание</label>
+                            <textarea class="form-control" id="entryDescription" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="entryDate" class="form-label">Дата</label>
+                            <input type="date" class="form-control" id="entryDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="entryStatus" class="form-label">Статус</label>
+                            <select class="form-select" id="entryStatus" required>
+                                <option value="completed">Завершено</option>
+                                <option value="in-progress">В процессе</option>
+                                <option value="planned">Запланировано</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Технологии</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="html" id="techHtml">
+                                <label class="form-check-label" for="techHtml">HTML/CSS</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="js" id="techJs">
+                                <label class="form-check-label" for="techJs">JavaScript</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="bootstrap" id="techBootstrap">
+                                <label class="form-check-label" for="techBootstrap">Bootstrap</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="react" id="techReact">
+                                <label class="form-check-label" for="techReact">React</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" id="saveEntryBtn">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Портфолио студента. Все права защищены.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="contacts.html" class="text-white text-decoration-none me-3">
+                        <i class="bi bi-telephone me-1"></i>Контакты
+                    </a>
+                    <a href="#" class="text-white text-decoration-none">
+                        <i class="bi bi-shield-check me-1"></i>Политика конфиденциальности
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Diary JS -->
+    <script src="../scripts/diary.js"></script>
+</body>
+</html>

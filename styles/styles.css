@@ -1,0 +1,248 @@
+/* Custom styles for portfolio */
+.hero-section {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.skill-item .progress {
+    border-radius: 10px;
+}
+
+.skill-item .progress-bar {
+    border-radius: 10px;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+/* Projects page styles */
+.filter-section {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.card-img-wrapper {
+    overflow: hidden;
+}
+
+.card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.filter-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Modal styles */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    border-radius: 15px 15px 0 0;
+}
+/* Diary page styles */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #dee2e6;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 2;
+}
+
+.timeline-content {
+    flex: 1;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.timeline-item.completed .timeline-content {
+    border-left: 4px solid #28a745;
+}
+
+.timeline-item.in-progress .timeline-content {
+    border-left: 4px solid #ffc107;
+}
+
+.timeline-item.planned .timeline-content {
+    border-left: 4px solid #6c757d;
+}
+
+.course-item:not(:last-child) {
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 1rem;
+}
+
+.stat-item {
+    padding: 0.5rem;
+}
+
+.stat-item .h4 {
+    font-weight: 700;
+}
+
+/* Modal styles */
+.modal-content {
+    border-radius: 15px;
+}
+
+.form-check {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+    }
+    
+    .timeline-marker {
+        left: -20px;
+        width: 25px;
+        height: 25px;
+    }
+    
+    .timeline-marker i {
+        font-size: 0.8rem;
+    }
+}
+/* Contacts page styles */
+.contact-item {
+    transition: transform 0.2s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    transition: transform 0.2s ease;
+}
+
+.contact-item:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+.social-link {
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    background-color: #f8f9fa;
+}
+
+/* Form styles */
+.form-control:focus,
+.form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-control.is-valid,
+.form-select.is-valid {
+    border-color: #28a745;
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #dc3545;
+}
+
+/* Map placeholder */
+.map-placeholder {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
+
+/* Success modal */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-item {
+        padding: 0.5rem 0;
+    }
+    
+    .social-link {
+        padding: 8px;
+    }
+    
+    .map-placeholder {
+        height: 200px !important;
+    }
+    
+    .map-placeholder .display-1 {
+        font-size: 3rem;
+    }
+}
+
+/* Loading state */
+.btn:disabled {
+    cursor: not-allowed;
+}
+
+/* Custom checkbox */
+.form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
