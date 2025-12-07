@@ -606,3 +606,23 @@ picture {
         margin-bottom: var(--space-sm);
     }
 }
+
+.error-message {
+    color: #cc0000; 
+    font-weight: bold;
+}
+
+.text-info {
+    color: #0056b3;
+}
+
+.contact-item a {
+    color: #0d6efd; 
+    text-decoration: underline;
+}
+
+
+a:focus, button:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}

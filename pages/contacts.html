@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Свяжитесь с нами для сотрудничества и обсуждения проектов. Контакты, форма обратной связи и карта.">
     <title>Контакты - Портфолио студента</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -10,38 +11,128 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles/styles.css">
+    <!-- A11y дополнительные стили -->
+    <style>
+        /* Улучшенные стили для доступности */
+        :focus {
+            outline: 3px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        
+        .form-label.required::after {
+            content: " *";
+            color: var(--danger-color);
+        }
+        
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        .fieldset-group {
+            border: 2px solid var(--primary-light);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .legend {
+            font-weight: 600;
+            color: var(--primary-color);
+            padding: 0 var(--space-sm);
+            background: white;
+            width: auto;
+        }
+        
+        .error-message {
+            color: var(--danger-color);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .form-control.error {
+            border-color: var(--danger-color);
+        }
+        
+        .success-message {
+            background: var(--success-color);
+            color: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            display: none;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        /* Улучшенные стили для галереи */
+        .gallery-image {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-image:focus {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+        
+        /* Стили для фокуса в навигации */
+        .nav-link:focus {
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+        
+        /* Доступные кастомные чекбоксы */
+        .form-check-input:focus {
+            box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+        }
+    </style>
 </head>
 <body class="bg-light">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <!-- Навигация с улучшенной доступностью -->
+    <nav class="navbar navbar-expand-lg navbar-dark" role="navigation" aria-label="Основная навигация">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <i class="bi bi-code-slash"></i>
+            <a class="navbar-brand" href="../index.html" aria-label="Главная страница портфолио">
+                <i class="bi bi-code-slash" aria-hidden="true"></i>
                 DevPortfolio
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">
-                            <i class="bi bi-house me-1"></i>Главная
+                <ul class="navbar-nav ms-auto" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="../index.html" role="menuitem">
+                            <i class="bi bi-house me-1" aria-hidden="true"></i>Главная
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">
-                            <i class="bi bi-folder me-1"></i>Проекты
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="projects.html" role="menuitem">
+                            <i class="bi bi-folder me-1" aria-hidden="true"></i>Проекты
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="diary.html">
-                            <i class="bi bi-journal me-1"></i>Дневник
+                    <li class="nav-item" role="none">
+                        <a class="nav-link" href="diary.html" role="menuitem">
+                            <i class="bi bi-journal me-1" aria-hidden="true"></i>Дневник
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contacts.html">
-                            <i class="bi bi-telephone me-1"></i>Контакты
+                    <li class="nav-item" role="none">
+                        <a class="nav-link active" href="contacts.html" aria-current="page" role="menuitem">
+                            <i class="bi bi-telephone me-1" aria-hidden="true"></i>Контакты
                         </a>
                     </li>
                 </ul>
@@ -49,192 +140,212 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="hero-section">
+    <!-- Заголовок страницы -->
+    <header class="hero-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col">
-                    <h1 class="hero-title">Контакты</h1>
+                    <h1 class="hero-title" id="page-title">Контакты</h1>
                     <p class="hero-subtitle">Свяжитесь со мной для сотрудничества и обсуждения проектов</p>
                 </div>
                 <div class="col-auto">
-                    <span class="badge bg-warning text-dark fs-6">
-                        <i class="bi bi-circle-fill text-success me-1"></i>Online
+                    <span class="badge bg-warning text-dark fs-6" role="status" aria-live="polite">
+                        <i class="bi bi-circle-fill text-success me-1" aria-hidden="true"></i>Online
                     </span>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Adaptive Gallery Preview -->
-    <section class="py-4 bg-white">
+    <!-- Основное содержимое -->
+    <main id="main-content">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h4 class="mb-2 text-primary">
-                        <i class="bi bi-images me-2"></i>
-                        Галерея с адаптивными изображениями
-                    </h4>
-                    <p class="mb-0 text-muted">Демонстрация адаптивной сетки изображений с использованием современных CSS техник</p>
-                </div>
-                <div class="col-md-4 text-md-end">
-                    <button class="btn btn-outline-primary btn-sm" onclick="toggleGridLayout()">
-                        <i class="bi bi-grid-3x3 me-1"></i>Сменить раскладку
-                    </button>
-                </div>
+            <!-- Уведомление об успешной отправке (скрыто изначально) -->
+            <div class="success-message" id="successMessage" role="alert" aria-live="assertive">
+                <i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>
+                Сообщение успешно отправлено! Я свяжусь с вами в ближайшее время.
             </div>
-        </div>
-    </section>
-
-    <!-- Adaptive Gallery -->
-    <section class="py-4 bg-light">
-        <div class="container">
-            <div class="adaptive-gallery" id="adaptiveGallery">
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="../images/gallery/image1.webp" type="image/webp">
-                        <img src="../images/gallery/image1.jpg" 
-                             class="gallery-image responsive-image" 
-                             alt="Веб-разработка проект"
-                             loading="lazy">
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h6>Веб-разработка</h6>
-                            <small>Адаптивный дизайн</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="../images/gallery/image2.webp" type="image/webp">
-                        <img src="../images/gallery/image2.jpg" 
-                             class="gallery-image responsive-image" 
-                             alt="Мобильная верстка"
-                             loading="lazy">
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h6>Мобильная верстка</h6>
-                            <small>Mobile-first подход</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="../images/gallery/image3.webp" type="image/webp">
-                        <img src="../images/gallery/image3.jpg" 
-                             class="gallery-image responsive-image" 
-                             alt="UI/UX дизайн"
-                             loading="lazy">
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h6>UI/UX дизайн</h6>
-                            <small>Пользовательский опыт</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="../images/gallery/image4.webp" type="image/webp">
-                        <img src="../images/gallery/image4.jpg" 
-                             class="gallery-image responsive-image" 
-                             alt="Оптимизация производительности"
-                             loading="lazy">
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h6>Оптимизация</h6>
-                            <small>Производительность</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="py-5">
-        <div class="container">
+            
             <div class="row">
-                <!-- Contact Form -->
+                <!-- Форма обратной связи -->
                 <div class="col-lg-8 mb-5">
                     <div class="card">
                         <div class="card-header bg-primary text-white">
-                            <h3 class="card-title h5 mb-0">
-                                <i class="bi bi-envelope me-2"></i>
+                            <h2 class="card-title h5 mb-0">
+                                <i class="bi bi-envelope me-2" aria-hidden="true"></i>
                                 Свяжитесь со мной
-                            </h3>
+                            </h2>
                         </div>
                         <div class="card-body">
-                            <form id="contactForm" class="contact-form" novalidate>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="firstName" class="form-label fw-bold">Имя *</label>
-                                        <input type="text" class="form-control" id="firstName" required>
-                                        <div class="invalid-feedback">Пожалуйста, введите ваше имя</div>
+                            <form id="contactForm" class="contact-form" novalidate aria-labelledby="form-title">
+                                <h3 id="form-title" class="visually-hidden">Форма обратной связи</h3>
+                                
+                                <!-- Группа: Личная информация -->
+                                <fieldset class="fieldset-group" aria-labelledby="personal-info-legend">
+                                    <legend id="personal-info-legend" class="legend h6 fw-bold">Личная информация</legend>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName" class="form-label required">
+                                                Имя
+                                            </label>
+                                            <input type="text" 
+                                                   class="form-control" 
+                                                   id="firstName" 
+                                                   name="firstName"
+                                                   required
+                                                   aria-required="true"
+                                                   aria-describedby="firstNameError"
+                                                   autocomplete="given-name">
+                                            <div id="firstNameError" class="error-message" role="alert">
+                                                Пожалуйста, введите ваше имя
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName" class="form-label">
+                                                Фамилия
+                                            </label>
+                                            <input type="text" 
+                                                   class="form-control" 
+                                                   id="lastName" 
+                                                   name="lastName"
+                                                   autocomplete="family-name">
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="lastName" class="form-label fw-bold">Фамилия</label>
-                                        <input type="text" class="form-control" id="lastName">
+                                    
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label required">
+                                            Email адрес
+                                        </label>
+                                        <input type="email" 
+                                               class="form-control" 
+                                               id="email" 
+                                               name="email"
+                                               required
+                                               aria-required="true"
+                                               aria-describedby="emailHelp emailError"
+                                               autocomplete="email">
+                                        <div id="emailHelp" class="form-text">
+                                            Мы никогда не передадим вашу электронную почту кому-либо еще.
+                                        </div>
+                                        <div id="emailError" class="error-message" role="alert">
+                                            Пожалуйста, введите корректный email адрес
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="email" class="form-label fw-bold">Email адрес *</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                    <div class="invalid-feedback">Пожалуйста, введите корректный email адрес</div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label fw-bold">Тема сообщения *</label>
-                                    <select class="form-select" id="subject" required>
-                                        <option value="" selected disabled>Выберите тему</option>
-                                        <option value="collaboration">Сотрудничество</option>
-                                        <option value="project">Обсуждение проекта</option>
-                                        <option value="adaptive-design">Консультация по адаптивному дизайну</option>
-                                        <option value="optimization">Оптимизация изображений</option>
-                                        <option value="question">Вопрос по проекту</option>
-                                        <option value="feedback">Обратная связь</option>
-                                        <option value="other">Другое</option>
-                                    </select>
-                                    <div class="invalid-feedback">Пожалуйста, выберите тему сообщения</div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="message" class="form-label fw-bold">Сообщение *</label>
-                                    <textarea class="form-control" id="message" rows="6" required 
-                                              placeholder="Опишите ваше предложение или вопрос..."></textarea>
-                                    <div class="invalid-feedback">Пожалуйста, введите ваше сообщение</div>
-                                    <div class="form-text">Минимальная длина сообщения: 10 символов</div>
-                                </div>
+                                </fieldset>
 
-                                <!-- File Upload with Image Preview -->
-                                <div class="mb-3">
-                                    <label for="fileUpload" class="form-label fw-bold">Прикрепить изображение (опционально)</label>
-                                    <input type="file" class="form-control" id="fileUpload" accept="image/*" onchange="previewImage(this)">
-                                    <div class="form-text">Максимальный размер: 5MB. Поддерживаемые форматы: JPG, PNG, WebP</div>
-                                    <div id="imagePreview" class="mt-2 d-none">
-                                        <img id="preview" class="img-thumbnail responsive-image" style="max-height: 200px;">
-                                        <button type="button" class="btn btn-sm btn-outline-danger mt-1" onclick="removeImage()">
-                                            <i class="bi bi-x-circle me-1"></i>Удалить
-                                        </button>
+                                <!-- Группа: Тема сообщения -->
+                                <fieldset class="fieldset-group" aria-labelledby="subject-legend">
+                                    <legend id="subject-legend" class="legend h6 fw-bold">Тема сообщения</legend>
+                                    
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label required">
+                                            Выберите тему
+                                        </label>
+                                        <select class="form-select" 
+                                                id="subject" 
+                                                name="subject"
+                                                required
+                                                aria-required="true"
+                                                aria-describedby="subjectError">
+                                            <option value="" selected disabled>Выберите тему сообщения</option>
+                                            <option value="collaboration">Сотрудничество</option>
+                                            <option value="project">Обсуждение проекта</option>
+                                            <option value="adaptive-design">Консультация по адаптивному дизайну</option>
+                                            <option value="optimization">Оптимизация изображений</option>
+                                            <option value="question">Вопрос по проекту</option>
+                                            <option value="feedback">Обратная связь</option>
+                                            <option value="other">Другое</option>
+                                        </select>
+                                        <div id="subjectError" class="error-message" role="alert">
+                                            Пожалуйста, выберите тему сообщения
+                                        </div>
                                     </div>
-                                </div>
-                                
+                                </fieldset>
+
+                                <!-- Группа: Сообщение -->
+                                <fieldset class="fieldset-group" aria-labelledby="message-legend">
+                                    <legend id="message-legend" class="legend h6 fw-bold">Ваше сообщение</legend>
+                                    
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label required">
+                                            Сообщение
+                                        </label>
+                                        <textarea class="form-control" 
+                                                  id="message" 
+                                                  name="message" 
+                                                  rows="6" 
+                                                  required
+                                                  aria-required="true"
+                                                  aria-describedby="messageHelp messageError"
+                                                  placeholder="Опишите ваше предложение или вопрос..."></textarea>
+                                        <div id="messageHelp" class="form-text">
+                                            Минимальная длина сообщения: 10 символов
+                                        </div>
+                                        <div id="messageError" class="error-message" role="alert">
+                                            Пожалуйста, введите ваше сообщение (минимум 10 символов)
+                                        </div>
+                                    </div>
+
+                                    <!-- Файл для загрузки -->
+                                    <div class="mb-3">
+                                        <label for="fileUpload" class="form-label">
+                                            Прикрепить изображение (опционально)
+                                        </label>
+                                        <input type="file" 
+                                               class="form-control" 
+                                               id="fileUpload" 
+                                               name="fileUpload"
+                                               accept="image/*" 
+                                               aria-describedby="fileHelp"
+                                               onchange="previewImage(this)">
+                                        <div id="fileHelp" class="form-text">
+                                            Максимальный размер: 5MB. Поддерживаемые форматы: JPG, PNG, WebP
+                                        </div>
+                                        <div id="imagePreview" class="mt-2 d-none" role="region" aria-label="Предпросмотр изображения">
+                                            <img id="preview" 
+                                                 class="img-thumbnail responsive-image" 
+                                                 alt="Предпросмотр загруженного изображения"
+                                                 style="max-height: 200px;">
+                                            <button type="button" 
+                                                    class="btn btn-sm btn-outline-danger mt-1"
+                                                    onclick="removeImage()"
+                                                    aria-label="Удалить изображение">
+                                                <i class="bi bi-x-circle me-1" aria-hidden="true"></i>Удалить
+                                            </button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Согласие на обработку данных -->
                                 <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                                    <input type="checkbox" 
+                                           class="form-check-input" 
+                                           id="agreeTerms" 
+                                           name="agreeTerms"
+                                           required
+                                           aria-required="true"
+                                           aria-describedby="termsError">
                                     <label class="form-check-label" for="agreeTerms">
                                         Я соглашаюсь с обработкой персональных данных
                                     </label>
-                                    <div class="invalid-feedback">Необходимо ваше согласие</div>
+                                    <div id="termsError" class="error-message" role="alert">
+                                        Необходимо ваше согласие
+                                    </div>
                                 </div>
                                 
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="reset" class="btn btn-secondary me-md-2" onclick="resetForm()">Очистить</button>
-                                    <button type="submit" class="btn btn-primary" id="submitBtn">
-                                        <span class="spinner-border spinner-border-sm d-none me-2" role="status"></span>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end" role="group" aria-label="Действия с формой">
+                                    <button type="reset" 
+                                            class="btn btn-secondary me-md-2" 
+                                            onclick="resetForm()"
+                                            aria-label="Очистить форму">
+                                        Очистить
+                                    </button>
+                                    <button type="submit" 
+                                            class="btn btn-primary" 
+                                            id="submitBtn"
+                                            aria-label="Отправить сообщение">
+                                        <span class="spinner-border spinner-border-sm d-none me-2" role="status" aria-hidden="true"></span>
                                         Отправить сообщение
                                     </button>
                                 </div>
@@ -243,20 +354,20 @@
                     </div>
                 </div>
 
-                <!-- Contact Information -->
+                <!-- Контактная информация -->
                 <div class="col-lg-4">
-                    <!-- Contact Details -->
-                    <div class="card mb-4">
+                    <!-- Контактные данные -->
+                    <div class="card mb-4" role="complementary" aria-labelledby="contact-info-title">
                         <div class="card-header bg-primary text-white">
-                            <h3 class="card-title h5 mb-0">
-                                <i class="bi bi-info-circle me-2"></i>
+                            <h3 id="contact-info-title" class="card-title h5 mb-0">
+                                <i class="bi bi-info-circle me-2" aria-hidden="true"></i>
                                 Контактная информация
                             </h3>
                         </div>
                         <div class="card-body">
-                            <div class="contact-item d-flex align-items-center mb-3 p-3 bg-light rounded">
+                            <div class="contact-item d-flex align-items-center mb-3 p-3 bg-light rounded" role="listitem">
                                 <div class="contact-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-                                     style="width: 40px; height: 40px;">
+                                     style="width: 40px; height: 40px;" aria-hidden="true">
                                     <i class="bi bi-envelope"></i>
                                 </div>
                                 <div>
@@ -265,9 +376,9 @@
                                 </div>
                             </div>
                             
-                            <div class="contact-item d-flex align-items-center mb-3 p-3 bg-light rounded">
+                            <div class="contact-item d-flex align-items-center mb-3 p-3 bg-light rounded" role="listitem">
                                 <div class="contact-icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-                                     style="width: 40px; height: 40px;">
+                                     style="width: 40px; height: 40px;" aria-hidden="true">
                                     <i class="bi bi-github"></i>
                                 </div>
                                 <div>
@@ -276,9 +387,9 @@
                                 </div>
                             </div>
 
-                            <div class="contact-item d-flex align-items-center mb-3 p-3 bg-light rounded">
+                            <div class="contact-item d-flex align-items-center mb-3 p-3 bg-light rounded" role="listitem">
                                 <div class="contact-icon bg-info text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-                                     style="width: 40px; height: 40px;">
+                                     style="width: 40px; height: 40px;" aria-hidden="true">
                                     <i class="bi bi-linkedin"></i>
                                 </div>
                                 <div>
@@ -287,9 +398,9 @@
                                 </div>
                             </div>
                             
-                            <div class="contact-item d-flex align-items-center mb-3 p-3 bg-light rounded">
+                            <div class="contact-item d-flex align-items-center mb-3 p-3 bg-light rounded" role="listitem">
                                 <div class="contact-icon bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-3" 
-                                     style="width: 40px; height: 40px;">
+                                     style="width: 40px; height: 40px;" aria-hidden="true">
                                     <i class="bi bi-geo-alt"></i>
                                 </div>
                                 <div>
@@ -298,9 +409,9 @@
                                 </div>
                             </div>
                             
-                            <div class="contact-item d-flex align-items-center p-3 bg-light rounded">
+                            <div class="contact-item d-flex align-items-center p-3 bg-light rounded" role="listitem">
                                 <div class="contact-icon bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-                                     style="width: 40px; height: 40px;">
+                                     style="width: 40px; height: 40px;" aria-hidden="true">
                                     <i class="bi bi-building"></i>
                                 </div>
                                 <div>
@@ -311,11 +422,11 @@
                         </div>
                     </div>
 
-                    <!-- Skills Progress -->
-                    <div class="card mb-4">
+                    <!-- Навыки -->
+                    <div class="card mb-4" role="complementary" aria-labelledby="skills-title">
                         <div class="card-header bg-success text-white">
-                            <h3 class="card-title h5 mb-0">
-                                <i class="bi bi-tools me-2"></i>
+                            <h3 id="skills-title" class="card-title h5 mb-0">
+                                <i class="bi bi-tools me-2" aria-hidden="true"></i>
                                 Навыки адаптивного дизайна
                             </h3>
                         </div>
@@ -323,49 +434,58 @@
                             <div class="skill-item mb-3">
                                 <div class="d-flex justify-content-between mb-1">
                                     <small class="fw-bold">Адаптивные изображения</small>
-                                    <small class="text-success">95%</small>
+                                    <small class="text-success" aria-hidden="true">95%</small>
+                                    <span class="visually-hidden">95 процентов</span>
                                 </div>
-                                <div class="progress" style="height: 6px;">
+                                <div class="progress" style="height: 6px;" role="progressbar" 
+                                     aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Адаптивные изображения">
                                     <div class="progress-bar bg-success" style="width: 95%"></div>
                                 </div>
                             </div>
                             <div class="skill-item mb-3">
                                 <div class="d-flex justify-content-between mb-1">
                                     <small class="fw-bold">WebP оптимизация</small>
-                                    <small class="text-success">90%</small>
+                                    <small class="text-success" aria-hidden="true">90%</small>
+                                    <span class="visually-hidden">90 процентов</span>
                                 </div>
-                                <div class="progress" style="height: 6px;">
+                                <div class="progress" style="height: 6px;" role="progressbar" 
+                                     aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="WebP оптимизация">
                                     <div class="progress-bar bg-success" style="width: 90%"></div>
                                 </div>
                             </div>
                             <div class="skill-item mb-3">
                                 <div class="d-flex justify-content-between mb-1">
                                     <small class="fw-bold">CSS Grid & Flexbox</small>
-                                    <small class="text-primary">88%</small>
+                                    <small class="text-primary" aria-hidden="true">88%</small>
+                                    <span class="visually-hidden">88 процентов</span>
                                 </div>
-                                <div class="progress" style="height: 6px;">
+                                <div class="progress" style="height: 6px;" role="progressbar" 
+                                     aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="CSS Grid и Flexbox">
                                     <div class="progress-bar bg-primary" style="width: 88%"></div>
                                 </div>
                             </div>
                             <div class="skill-item">
                                 <div class="d-flex justify-content-between mb-1">
                                     <small class="fw-bold">Lazy Loading</small>
-                                    <small class="text-info">85%</small>
+                                    <small class="text-info" aria-hidden="true">85%</small>
+                                    <span class="visually-hidden">85 процентов</span>
                                 </div>
-                                <div class="progress" style="height: 6px;">
+                                <div class="progress" style="height: 6px;" role="progressbar" 
+                                     aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Lazy Loading">
                                     <div class="progress-bar bg-info" style="width: 85%"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Response Time -->
-                    <div class="card">
+                    <!-- Время ответа -->
+                    <div class="card" role="complementary" aria-labelledby="response-time-title">
                         <div class="card-body text-center">
-                            <i class="bi bi-clock display-4 text-primary mb-3"></i>
-                            <h5 class="fw-bold">Время ответа</h5>
+                            <i class="bi bi-clock display-4 text-primary mb-3" aria-hidden="true"></i>
+                            <h4 id="response-time-title" class="fw-bold">Время ответа</h4>
                             <p class="text-muted">Обычно отвечаю в течение 24 часов</p>
-                            <div class="progress mb-2">
+                            <div class="progress mb-2" role="progressbar" 
+                                 aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Процент ответов в течение дня">
                                 <div class="progress-bar bg-success" style="width: 90%"></div>
                             </div>
                             <small class="text-muted">90% сообщений получают ответ в течение дня</small>
@@ -374,13 +494,13 @@
                 </div>
             </div>
 
-            <!-- Map Section -->
+            <!-- Карта местоположения -->
             <div class="row mt-5">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card" role="region" aria-labelledby="location-title">
                         <div class="card-header bg-primary text-white">
-                            <h3 class="card-title h5 mb-0">
-                                <i class="bi bi-map me-2"></i>
+                            <h3 id="location-title" class="card-title h5 mb-0">
+                                <i class="bi bi-map me-2" aria-hidden="true"></i>
                                 Местоположение
                             </h3>
                         </div>
@@ -388,18 +508,18 @@
                             <div class="map-placeholder bg-gradient text-white text-center py-5 rounded-bottom">
                                 <div class="row align-items-center h-100">
                                     <div class="col-md-6">
-                                        <i class="bi bi-geo-alt-fill display-1 mb-3"></i>
+                                        <i class="bi bi-geo-alt-fill display-1 mb-3" aria-hidden="true"></i>
                                         <h4>Москва, РТУ МИРЭА</h4>
                                         <p class="mb-0">Проспект Вернадского, 78</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="adaptive-map-demo">
+                                        <div class="adaptive-map-demo" role="img" aria-label="Карта местоположения РТУ МИРЭА">
                                             <picture>
                                                 <source srcset="../images/map-desktop.webp" media="(min-width: 768px)" type="image/webp">
                                                 <source srcset="../images/map-mobile.webp" type="image/webp">
                                                 <img src="../images/map-mobile.jpg" 
                                                      class="img-fluid rounded" 
-                                                     alt="Карта местоположения"
+                                                     alt="Карта местоположения РТУ МИРЭА на проспекте Вернадского"
                                                      loading="lazy">
                                             </picture>
                                             <small class="text-muted mt-2 d-block">Адаптивная карта для разных устройств</small>
@@ -414,27 +534,8 @@
         </div>
     </main>
 
-    <!-- Success Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center py-4">
-                    <i class="bi bi-check-circle-fill text-success display-1 mb-3"></i>
-                    <h3 class="fw-bold">Сообщение отправлено!</h3>
-                    <p class="text-muted">Я свяжусь с вами в ближайшее время</p>
-                </div>
-                <div class="modal-footer border-0 justify-content-center">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Понятно</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Футер -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
@@ -442,65 +543,283 @@
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="contacts.html" class="text-white text-decoration-none me-3">
-                        <i class="bi bi-telephone me-1"></i>Контакты
+                        <i class="bi bi-telephone me-1" aria-hidden="true"></i>Контакты
                     </a>
                     <a href="#" class="text-white text-decoration-none">
-                        <i class="bi bi-shield-check me-1"></i>Политика конфиденциальности
+                        <i class="bi bi-shield-check me-1" aria-hidden="true"></i>Политика конфиденциальности
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Модальное окно успеха -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" 
+         aria-labelledby="successModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 id="successModalTitle" class="visually-hidden">Сообщение отправлено успешно</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <i class="bi bi-check-circle-fill text-success display-1 mb-3" aria-hidden="true"></i>
+                    <h3 class="fw-bold">Сообщение отправлено!</h3>
+                    <p class="text-muted">Я свяжусь с вами в ближайшее время</p>
+                </div>
+                <div class="modal-footer border-0 justify-content-center">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Понятно">Понятно</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <!-- Forms JS -->
-    <script src="../scripts/forms.js"></script>
+   <script src="/scripts/forms.js" defer></script>
 
     <script>
-        // Gallery layout toggle
-        function toggleGridLayout() {
-            const gallery = document.getElementById('adaptiveGallery');
-            gallery.classList.toggle('grid-layout-1');
-            gallery.classList.toggle('grid-layout-2');
-        }
-
-        // Image preview for file upload
+        // Обновленный JavaScript для улучшения доступности
+        
+        // Функция для предпросмотра изображения
         function previewImage(input) {
             const preview = document.getElementById('preview');
             const previewContainer = document.getElementById('imagePreview');
             
             if (input.files && input.files[0]) {
+                // Проверка размера файла
+                if (input.files[0].size > 5 * 1024 * 1024) {
+                    showError('fileUpload', 'Размер файла не должен превышать 5MB');
+                    input.value = '';
+                    return;
+                }
+                
                 const reader = new FileReader();
                 
                 reader.onload = function(e) {
                     preview.src = e.target.result;
                     previewContainer.classList.remove('d-none');
+                    clearError('fileUpload');
                 }
                 
                 reader.readAsDataURL(input.files[0]);
             }
         }
 
-        // Remove uploaded image
+        // Удалить загруженное изображение
         function removeImage() {
             const previewContainer = document.getElementById('imagePreview');
             const fileInput = document.getElementById('fileUpload');
+            const preview = document.getElementById('preview');
             
             previewContainer.classList.add('d-none');
             fileInput.value = '';
+            preview.src = '';
         }
 
-        // Reset form
+        // Сброс формы
         function resetForm() {
             removeImage();
             document.getElementById('contactForm').classList.remove('was-validated');
+            
+            // Скрыть все сообщения об ошибках
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.classList.remove('show');
+            });
+            
+            // Убрать классы ошибок с полей
+            document.querySelectorAll('.form-control.error').forEach(el => {
+                el.classList.remove('error');
+            });
+            
+            // Скрыть сообщение об успехе
+            document.getElementById('successMessage').classList.remove('show');
         }
 
-        // Initialize gallery
+        // Показать ошибку
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(fieldId + 'Error');
+            
+            if (field && errorElement) {
+                field.classList.add('error');
+                errorElement.textContent = message;
+                errorElement.classList.add('show');
+                field.setAttribute('aria-invalid', 'true');
+            }
+        }
+
+        // Очистить ошибку
+        function clearError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(fieldId + 'Error');
+            
+            if (field && errorElement) {
+                field.classList.remove('error');
+                errorElement.classList.remove('show');
+                field.removeAttribute('aria-invalid');
+            }
+        }
+
+        // Валидация формы
+        function validateForm() {
+            let isValid = true;
+            
+            // Проверка обязательных полей
+            const requiredFields = ['firstName', 'email', 'subject', 'message', 'agreeTerms'];
+            
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field) return;
+                
+                if (field.type === 'checkbox') {
+                    if (!field.checked) {
+                        showError(fieldId, 'Это поле обязательно для заполнения');
+                        isValid = false;
+                    } else {
+                        clearError(fieldId);
+                    }
+                } else {
+                    if (!field.value.trim()) {
+                        showError(fieldId, 'Это поле обязательно для заполнения');
+                        isValid = false;
+                    } else if (fieldId === 'email' && !isValidEmail(field.value)) {
+                        showError(fieldId, 'Пожалуйста, введите корректный email адрес');
+                        isValid = false;
+                    } else if (fieldId === 'message' && field.value.trim().length < 10) {
+                        showError(fieldId, 'Сообщение должно содержать минимум 10 символов');
+                        isValid = false;
+                    } else {
+                        clearError(fieldId);
+                    }
+                }
+            });
+            
+            return isValid;
+        }
+
+        // Проверка email
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Обработка отправки формы
         document.addEventListener('DOMContentLoaded', function() {
-            const gallery = document.getElementById('adaptiveGallery');
-            gallery.classList.add('grid-layout-1');
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = submitBtn.querySelector('.spinner-border');
+            const successMessage = document.getElementById('successMessage');
+            
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                if (validateForm()) {
+                    // Показать индикатор загрузки
+                    submitBtn.disabled = true;
+                    spinner.classList.remove('d-none');
+                    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Отправка...';
+                    
+                    // Имитация отправки
+                    setTimeout(() => {
+                        // Скрыть индикатор загрузки
+                        submitBtn.disabled = false;
+                        spinner.classList.add('d-none');
+                        submitBtn.innerHTML = 'Отправить сообщение';
+                        
+                        // Показать сообщение об успехе
+                        successMessage.classList.add('show');
+                        successMessage.setAttribute('role', 'alert');
+                        
+                        // Прокрутить к сообщению об успехе
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Сбросить форму
+                        resetForm();
+                        contactForm.reset();
+                        
+                        // Скрыть сообщение об успехе через 5 секунд
+                        setTimeout(() => {
+                            successMessage.classList.remove('show');
+                        }, 5000);
+                    }, 1500);
+                } else {
+                    // Прокрутить к первой ошибке
+                    const firstError = document.querySelector('.error-message.show');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+            
+            // Реальная валидация при изменении полей
+            document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea').forEach(field => {
+                field.addEventListener('blur', function() {
+                    if (this.required || this.id === 'email' || this.id === 'message') {
+                        validateField(this);
+                    }
+                });
+                
+                field.addEventListener('input', function() {
+                    if (this.classList.contains('error')) {
+                        validateField(this);
+                    }
+                });
+            });
+            
+            function validateField(field) {
+                const fieldId = field.id;
+                
+                if (field.type === 'checkbox') {
+                    if (!field.checked) {
+                        showError(fieldId, 'Это поле обязательно для заполнения');
+                    } else {
+                        clearError(fieldId);
+                    }
+                } else {
+                    if (!field.value.trim()) {
+                        showError(fieldId, 'Это поле обязательно для заполнения');
+                    } else if (fieldId === 'email' && !isValidEmail(field.value)) {
+                        showError(fieldId, 'Пожалуйста, введите корректный email адрес');
+                    } else if (fieldId === 'message' && field.value.trim().length < 10) {
+                        showError(fieldId, 'Сообщение должно содержать минимум 10 символов');
+                    } else {
+                        clearError(fieldId);
+                    }
+                }
+            }
+            
+            // Обработка Escape для закрытия сообщений
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    successMessage.classList.remove('show');
+                    
+                    // Закрытие модального окна Bootstrap
+                    const modal = document.querySelector('.modal.show');
+                    if (modal) {
+                        const modalInstance = bootstrap.Modal.getInstance(modal);
+                        if (modalInstance) {
+                            modalInstance.hide();
+                        }
+                    }
+                }
+            });
+            
+            // Улучшение навигации для пользователей скринридеров
+            const mainContent = document.getElementById('main-content');
+            if (mainContent) {
+                mainContent.setAttribute('tabindex', '-1');
+            }
+            
+            // Фокусировка на основном контенте при загрузке (для скринридеров)
+            window.addEventListener('load', function() {
+                const skipLink = document.createElement('a');
+                skipLink.href = '#main-content';
+                skipLink.className = 'visually-hidden visually-hidden-focusable';
+                skipLink.textContent = 'Перейти к основному контенту';
+                document.body.insertBefore(skipLink, document.body.firstChild);
+            });
         });
     </script>
 </body>
